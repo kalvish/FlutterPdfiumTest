@@ -1,16 +1,25 @@
-# streams_test
+# Flutter Pdfium Test
 
-A new Flutter project.
+This project is build with the help of following repo.
+https://github.com/scientifichackers/flutter-pdfium
 
-## Getting Started
+# Android Support
+The above repo has used flutter desktop to run the Pdfium viewer.
+However I managed to import Android libraries based on the following repo.
+https://github.com/benjinus/android-support-pdfium
 
-This project is a starting point for a Flutter application.
+Loaded the prebuid Dynamic library as mentioned here.
+https://github.com/dart-lang/ffi/issues/25
 
-A few resources to get you started if this is your first Flutter project:
+#### Step 1: libpdfsdk.so in android/src/main/jniLibs/ in their respective platform folders
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![Alt text](docs/images/jnilibsfolder.PNG?raw=true "jniLibs Location")
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Step 2: in android/build.gradle
+Follow the issue thread for more information.
+
+#### Step 3: Loaded pdfium dart codes to the project's lib folder. Might need to import dart:ffi
+From this repo's lib folder https://github.com/scientifichackers/flutter-pdfium
+
+#### Step 4: Sort relative links in the .dart files
+
