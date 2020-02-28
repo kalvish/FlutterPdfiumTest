@@ -1,0 +1,70 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "C:\\flutter\\projects\\streams_test\\android",
+      "sdkFolder": "C:\\Users\\vishwan\\AppData\\Local\\Android\\sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "C:\\flutter\\projects\\streams_test\\build\\app\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "C:\\flutter\\projects\\streams_test\\android\\app",
+      "makeFile": "C:\\flutter\\projects\\streams_test\\android\\app\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "C:\\flutter\\projects\\streams_test\\android\\.cxx",
+      "cxxFolder": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx",
+      "ndkFolder": "C:\\Users\\vishwan\\AppData\\Local\\Android\\sdk\\ndk\\21.0.6113669",
+      "ndkVersion": "21.0.6113669",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [],
+    "variantName": "debug",
+    "soFolder": "C:\\flutter\\projects\\streams_test\\build\\app\\intermediates\\cmake\\debug\\lib",
+    "objFolder": "C:\\flutter\\projects\\streams_test\\build\\app\\intermediates\\cmake\\debug\\obj",
+    "jsonFolder": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug",
+    "gradleBuildOutputFolder": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86_64",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\x86_64",
+  "jsonFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\x86_64\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug\\x86_64",
+  "objFolder": "C:\\flutter\\projects\\streams_test\\build\\app\\intermediates\\cmake\\debug\\obj\\x86_64",
+  "buildCommandFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\x86_64\\build_command.txt",
+  "buildOutputFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\x86_64\\build_output.txt",
+  "modelOutputFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\x86_64\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug\\x86_64\\CMakeLists.txt",
+    "toolchainWrapperFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug\\x86_64\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug\\x86_64\\build_generation_state.json",
+    "cacheKeyFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug\\x86_64\\compiler_cache_key.json",
+    "compilerCacheUseFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug\\x86_64\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug\\x86_64\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cxx\\debug\\x86_64\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\x86_64\\json_generation_record.json",
+  "compileCommandsJsonFile": "C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\x86_64\\compile_commands.json"
+}

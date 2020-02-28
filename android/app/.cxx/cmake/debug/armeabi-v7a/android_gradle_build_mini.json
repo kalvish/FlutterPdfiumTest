@@ -1,0 +1,15 @@
+{
+  "buildFiles": [
+    "C:\\flutter\\projects\\streams_test\\android\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\vishwan\\AppData\\Local\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "libpdfsdk-Debug-armeabi-v7a": {
+      "artifactName": "libpdfsdk",
+      "abi": "armeabi-v7a",
+      "output": "C:\\flutter\\projects\\streams_test\\android\\app\\src\\main\\jniLibs\\armeabi-v7a\\libpdfsdk.so"
+    }
+  }
+}

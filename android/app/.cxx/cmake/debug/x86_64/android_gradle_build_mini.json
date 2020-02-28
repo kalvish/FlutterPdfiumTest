@@ -1,0 +1,15 @@
+{
+  "buildFiles": [
+    "C:\\flutter\\projects\\streams_test\\android\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\vishwan\\AppData\\Local\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\flutter\\projects\\streams_test\\android\\app\\.cxx\\cmake\\debug\\x86_64 --target clean"
+  ],
+  "libraries": {
+    "libpdfsdk-Debug-x86_64": {
+      "artifactName": "libpdfsdk",
+      "abi": "x86_64",
+      "output": "C:\\flutter\\projects\\streams_test\\android\\app\\src\\main\\jniLibs\\x86_64\\libpdfsdk.so"
+    }
+  }
+}
