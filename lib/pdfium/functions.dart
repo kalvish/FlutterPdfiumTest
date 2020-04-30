@@ -334,3 +334,7 @@ typedef Pointer<Uint32> FPDFBitmap_GetBuffer(Pointer<FPDF_BITMAP> bitmap);
 typedef Pointer<Uint32> BitmapGetBuffer(Pointer<FPDF_BITMAP> bitmap);
 
 BitmapGetBuffer fBitmapGetBuffer;
+
+typedef Void FPDFPage_SetRotation(Pointer<FPDF_PAGE> page, Int32 pageRotate);
+typedef void PageSetRotation(Pointer<FPDF_PAGE> page, int pageRotate);
+PageSetRotation fPageSetRotation;

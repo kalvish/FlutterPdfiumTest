@@ -140,13 +140,14 @@ class _PdfViewState extends State<PdfView> {
     Pointer<FPDF_DOCUMENT> doc;
     Pointer<FPDF_BITMAP> bitmap;
     Uint8List buf;
-    int ppi = 100;
+    int ppi = 50;
 
     if (widget.filePath == null) return;
 
     doc = loadDocument(widget.filePath);
-    page = fLoadPage(doc, 0);
-
+    page = fLoadPage(doc, 1);
+    int pageCount = fGetPageCount(doc);
+    fPageSetRotation(page,1);
     width = fGetPageWidth(page).toInt();
     height = fGetPageHeight(page).toInt();
     width = pointsToPixels(width, ppi).toInt();

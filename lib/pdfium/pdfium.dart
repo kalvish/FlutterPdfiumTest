@@ -54,6 +54,9 @@ final DynamicLibrary dylib = Platform.isAndroid
       dylib.lookupFunction<FPDFBitmap_GetBuffer, BitmapGetBuffer>(
     "FPDFBitmap_GetBuffer",
   );
+  fPageSetRotation = dylib.lookupFunction<FPDFPage_SetRotation, PageSetRotation>(
+    "FPDFPage_SetRotation",
+    );
 }
 
 num pointsToPixels(num points, num ppi) {
