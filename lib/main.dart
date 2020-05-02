@@ -178,16 +178,31 @@ class _PdfViewState extends State<PdfView> {
       },
     );
 
+/*
+Load FPDF_TEXTPAGE from a FPDF_PAGE
+*/
     Pointer<FPDF_TEXTPAGE> fpdf_textpage = fTextLoadPage(page);
     int error = fGetLastError();
 
+/*
+Check if the input annotation type available or not.
+*/
     int isTextAvailable = fAnnotIsSupportedSubtype(1);
+    /*
+    If fGetLastError returns 0, it means the method request was successful.
+    */
     int errorFAnnotIsSupportedSubtype = fGetLastError();
     // Pointer<Utf8> extracted_text = fTextGetText(fpdf_textpage,1,3);
     // int errorFTextGetText = fGetLastError();
+    /*
+    Get text count on a FPDF_TEXTPAGE
+    */
     int textCountOnPage = fTextCountChars(fpdf_textpage);
     List<int> textList = new List();
     for (var i = 0; i < 100; i++) {
+      /*
+      Get unicode character for each character in a FPDF_TEXTPAGE
+      */
       int textUnicode = fTextGetUnicode(fpdf_textpage, i);
       textList.add(textUnicode);
 
@@ -198,6 +213,9 @@ class _PdfViewState extends State<PdfView> {
     textListTemp.add(83);
     var dec = convertlib.utf8.decode(textList);
     print(dec);
+    /*
+    Close FPDF_TEXTPAGE after all related operations
+    */
     fTextClosePage(fpdf_textpage);
     int errorFTextClosePage = fGetLastError();
 
