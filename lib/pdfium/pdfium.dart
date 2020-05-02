@@ -75,6 +75,8 @@ void loadDylib(String path) {
   fTextGetUnicode = dylib.lookupFunction<FPDFText_GetUnicode, TextGetUnicode>(
       "FPDFText_GetUnicode");
   fTextCountChars = dylib.lookupFunction<FPDFText_CountChars,TextCountChars>("FPDFText_CountChars");
+  fTextCountRects = dylib.lookupFunction<FPDFText_CountRects,TextCountRects>("FPDFText_CountRects");
+  fTextGetCharBox = dylib.lookupFunction<FPDFText_GetCharBox,TextGetCharBox>("FPDFText_GetCharBox");
 }
 
 num pointsToPixels(num points, num ppi) {

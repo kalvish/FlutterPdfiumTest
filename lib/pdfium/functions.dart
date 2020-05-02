@@ -396,3 +396,33 @@ typedef int TextCountChars(
   Pointer<FPDF_TEXTPAGE> text_page
 );
 TextCountChars fTextCountChars;
+
+typedef Int32 FPDFText_CountRects(
+  Pointer<FPDF_TEXTPAGE> text_page,
+  Int32 start_index,
+  Int32 count
+);
+typedef int TextCountRects(
+  Pointer<FPDF_TEXTPAGE> text_page,
+  int start_index,
+  int count
+);
+TextCountRects fTextCountRects;
+
+typedef Void FPDFText_GetCharBox(
+  Pointer<FPDF_TEXTPAGE> text_page,
+  Int32 index,
+  Pointer<Double> left,
+  Pointer<Double> right,
+  Pointer<Double> bottom,
+  Pointer<Double> top
+);
+typedef void TextGetCharBox(
+  Pointer<FPDF_TEXTPAGE> text_page,
+  int index,
+  Pointer<Double> left,
+  Pointer<Double> right,
+  Pointer<Double> bottom,
+  Pointer<Double> top
+);
+TextGetCharBox fTextGetCharBox;

@@ -213,6 +213,17 @@ Check if the input annotation type available or not.
     textListTemp.add(83);
     var dec = convertlib.utf8.decode(textList);
     print(dec);
+
+    int countNoOfRectAreas = fTextCountRects(fpdf_textpage, 0, 100);
+    int errorFTextCountRects = fGetLastError();
+
+    //allocate made it work.
+    Pointer<Double> leftP = allocate<Double>();
+    Pointer<Double> rightP = allocate<Double>();
+    Pointer<Double> bottomP = allocate<Double>();
+    Pointer<Double> topP = allocate<Double>();
+    fTextGetCharBox(fpdf_textpage,0,leftP,rightP,bottomP,topP);
+    int errorFTextGetCharBox = fGetLastError();
     /*
     Close FPDF_TEXTPAGE after all related operations
     */
