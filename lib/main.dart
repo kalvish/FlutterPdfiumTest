@@ -2,7 +2,9 @@ import 'dart:ffi';
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
+import 'dart:convert' as convertlib;
 
+import 'package:ffi/ffi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:streams_test/pdfium/pdfium.dart';
@@ -140,19 +142,21 @@ class _PdfViewState extends State<PdfView> {
     Pointer<FPDF_DOCUMENT> doc;
     Pointer<FPDF_BITMAP> bitmap;
     Uint8List buf;
-    int ppi = 50;
 
+    int ppi = (MediaQuery.of(context).devicePixelRatio * 160).toInt();
+    ppi = 100;
     if (widget.filePath == null) return;
 
     doc = loadDocument(widget.filePath);
-    page = fLoadPage(doc, 1);
+    page = fLoadPage(doc, 0);
     int pageCount = fGetPageCount(doc);
-    fPageSetRotation(page,1);
+    fPageSetRotation(page, 4);
     width = fGetPageWidth(page).toInt();
     height = fGetPageHeight(page).toInt();
     width = pointsToPixels(width, ppi).toInt();
     height = pointsToPixels(height, ppi).toInt();
-
+    width = MediaQuery.of(context).size.width.toInt();
+    height = MediaQuery.of(context).size.height.toInt();
     bitmap = fBitmapCreate(width, height, 1);
     fBitmapFillRect(bitmap, 0, 0, width, height, 0);
     fRenderPageBitmap(bitmap, page, 0, 0, width, height, 0, 0);
@@ -173,6 +177,32 @@ class _PdfViewState extends State<PdfView> {
         });
       },
     );
+
+    Pointer<FPDF_TEXTPAGE> fpdf_textpage = fTextLoadPage(page);
+    int error = fGetLastError();
+
+    int isTextAvailable = fAnnotIsSupportedSubtype(1);
+    int errorFAnnotIsSupportedSubtype = fGetLastError();
+    // Pointer<Utf8> extracted_text = fTextGetText(fpdf_textpage,1,3);
+    // int errorFTextGetText = fGetLastError();
+    int textCountOnPage = fTextCountChars(fpdf_textpage);
+    List<int> textList = new List();
+    for (var i = 0; i < 100; i++) {
+      int textUnicode = fTextGetUnicode(fpdf_textpage, i);
+      textList.add(textUnicode);
+
+      // print(textUnicode);
+    }
+    List<int> textListTemp = new List();
+    textListTemp.add(101);
+    textListTemp.add(83);
+    var dec = convertlib.utf8.decode(textList);
+    print(dec);
+    fTextClosePage(fpdf_textpage);
+    int errorFTextClosePage = fGetLastError();
+
+    // String test = extracted_text.toString();
+    // String text = Utf8.fromUtf8(extracted_text);
 
     fCloseDocument(doc);
 

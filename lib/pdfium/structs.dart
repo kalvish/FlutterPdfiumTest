@@ -54,3 +54,7 @@ class FPDF_DOCUMENT extends Struct {}
 class FPDF_PAGE extends Struct {}
 
 class FPDF_BITMAP extends Struct {}
+
+class FPDF_TEXTPAGE extends Struct {}
+
+class FPDF_BOOL extends Struct {}

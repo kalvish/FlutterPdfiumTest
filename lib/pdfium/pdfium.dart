@@ -1,4 +1,5 @@
 library pdfium;
+
 import 'dart:ffi';
 
 import 'dart:io';
@@ -9,9 +10,9 @@ export 'structs.dart';
 
 void loadDylib(String path) {
   // var dylib = ffi.DynamicLibrary.open(path);
-final DynamicLibrary dylib = Platform.isAndroid
-    ? DynamicLibrary.open("libpdfsdk.so")
-    : DynamicLibrary.open("rPPG.framework/rPPG");
+  final DynamicLibrary dylib = Platform.isAndroid
+      ? DynamicLibrary.open("libpdfsdk.so")
+      : DynamicLibrary.open("rPPG.framework/rPPG");
   fInitLibraryWithConfig =
       dylib.lookupFunction<FPDF_InitLibraryWithConfig, InitLibraryWithConfig>(
     "FPDF_InitLibraryWithConfig",
@@ -54,9 +55,26 @@ final DynamicLibrary dylib = Platform.isAndroid
       dylib.lookupFunction<FPDFBitmap_GetBuffer, BitmapGetBuffer>(
     "FPDFBitmap_GetBuffer",
   );
-  fPageSetRotation = dylib.lookupFunction<FPDFPage_SetRotation, PageSetRotation>(
+  fPageSetRotation =
+      dylib.lookupFunction<FPDFPage_SetRotation, PageSetRotation>(
     "FPDFPage_SetRotation",
-    );
+  );
+  fTextLoadPage = dylib.lookupFunction<FPDFText_LoadPage, TextLoadPage>(
+    "FPDFText_LoadPage",
+  );
+  fTextClosePage = dylib.lookupFunction<FPDFText_ClosePage, TextClosePage>(
+    "FPDFText_ClosePage",
+  );
+  fTextGetText = dylib.lookupFunction<FPDFText_GetText, TextGetText>(
+    "FPDFText_GetText",
+  );
+  fAnnotIsSupportedSubtype = dylib
+      .lookupFunction<FPDFAnnot_IsSupportedSubtype, AnnotIsSupportedSubtype>(
+    "FPDFAnnot_IsSupportedSubtype",
+  );
+  fTextGetUnicode = dylib.lookupFunction<FPDFText_GetUnicode, TextGetUnicode>(
+      "FPDFText_GetUnicode");
+  fTextCountChars = dylib.lookupFunction<FPDFText_CountChars,TextCountChars>("FPDFText_CountChars");
 }
 
 num pointsToPixels(num points, num ppi) {

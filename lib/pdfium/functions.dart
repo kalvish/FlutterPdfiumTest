@@ -338,3 +338,61 @@ BitmapGetBuffer fBitmapGetBuffer;
 typedef Void FPDFPage_SetRotation(Pointer<FPDF_PAGE> page, Int32 pageRotate);
 typedef void PageSetRotation(Pointer<FPDF_PAGE> page, int pageRotate);
 PageSetRotation fPageSetRotation;
+
+//https://pdfium.patagames.com/help/html/M_Patagames_Pdf_Pdfium_FPDFText_LoadPage.htm
+typedef Pointer<FPDF_TEXTPAGE> FPDFText_LoadPage(
+  Pointer<FPDF_PAGE> page
+);
+typedef Pointer<FPDF_TEXTPAGE> TextLoadPage(
+  Pointer<FPDF_PAGE> page
+);
+TextLoadPage fTextLoadPage;
+
+typedef Void FPDFText_ClosePage(
+  Pointer<FPDF_TEXTPAGE> text_page
+);
+typedef void TextClosePage(
+  Pointer<FPDF_TEXTPAGE> text_page
+);
+TextClosePage fTextClosePage;
+
+//https://developers.foxitsoftware.com/resources/pdf-sdk/c_api_reference_pdfium/group___f_p_d_f_i_u_m.html#ga7af462cca18d759467b2d5d6b396fd6e
+typedef Pointer<Utf8> FPDFText_GetText(
+  Pointer<FPDF_TEXTPAGE> text_page,
+  Int32 start_index,
+  Int32 count
+);
+typedef Pointer<Utf8> TextGetText(
+  Pointer<FPDF_TEXTPAGE> text_page,
+  int start_index,
+  int count
+);
+TextGetText fTextGetText;
+
+//Bool is not yet available in dart:ffi. So use Int8
+//https://github.com/dart-lang/sdk/issues/36855
+typedef Int8 FPDFAnnot_IsSupportedSubtype(
+  Int32 subType
+);
+typedef int AnnotIsSupportedSubtype(
+  int subType
+);
+AnnotIsSupportedSubtype fAnnotIsSupportedSubtype;
+
+typedef Uint32 FPDFText_GetUnicode(
+  Pointer<FPDF_TEXTPAGE> text_page,
+  Int32 index 
+);
+typedef int TextGetUnicode(
+  Pointer<FPDF_TEXTPAGE> text_page,
+  int index 
+);
+TextGetUnicode fTextGetUnicode;
+
+typedef Int32 FPDFText_CountChars(
+  Pointer<FPDF_TEXTPAGE> text_page
+);
+typedef int TextCountChars(
+  Pointer<FPDF_TEXTPAGE> text_page
+);
+TextCountChars fTextCountChars;
